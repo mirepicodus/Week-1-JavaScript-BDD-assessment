@@ -28,6 +28,7 @@ $(document).ready(function() {
     var phraseToTranslate = $("input#phrase-to-translate").val();
 
     $(".result").text(pigLatin(phraseToTranslate));
+    $('#piggy').show();
 
     event.preventDefault();
   });
