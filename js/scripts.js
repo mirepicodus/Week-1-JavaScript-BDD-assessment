@@ -6,6 +6,7 @@ function pigLatin(phrase) {
   var toFirstY = /\b[^y]+/ig;
   var result = [];
   var words = phrase.split(" ");
+
   words.forEach(function(word) {
     if(word.match(quCase)) {
       result.push(word.replace(quCase, '') + word.match(quCase) + 'ay');
@@ -20,3 +21,14 @@ function pigLatin(phrase) {
 
   return result.join(" ");
 }
+
+
+$(document).ready(function() {
+  $('form').submit(function(event) {
+    var phraseToTranslate = $("input#phrase-to-translate").val();
+
+    $(".result").text(pigLatin(phraseToTranslate));
+
+    event.preventDefault();
+  });
+});
